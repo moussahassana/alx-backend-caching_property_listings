@@ -1,0 +1,53 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.pyc
+*.sqlite3
+
+# Environment
+.env
+.venv/
+env/
+venv/
+*.env
+
+# Poetry
+poetry.lock
+
+# Django specific
+db.sqlite3
+media/
+staticfiles/
+*.log
+
+# VSCode / IDEs
+.vscode/
+.idea/
+*.sublime-workspace
+*.sublime-project
+
+# MacOS / Windows
+.DS_Store
+Thumbs.db
+
+# Docker
+*.pid
+docker-compose.override.yml
+*.log
+
+# Migrations (optional, if generated dynamically)
+*/migrations/__pycache__/
+*/migrations/*.pyc
+*/migrations/*.pyo
+*/migrations/*.pyd
+
+# Byte-compiled, backup and cache
+*.bak
+*.swp
+*~
+.cache/
+pytest_cache/
+.coverage
+htmlcov/
