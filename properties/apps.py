@@ -6,4 +6,4 @@ class PropertiesConfig(AppConfig):
 
     def ready(self):
         # Import signals so receivers are registered when the app loads
-        from . import signals  # noqa: F401
+        import properties.signals  # noqa: F401

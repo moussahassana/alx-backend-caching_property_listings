@@ -21,6 +21,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django_redis',
     'properties',
+    'properties.apps.PropertiesConfig',
 ]
 
 MIDDLEWARE = [
