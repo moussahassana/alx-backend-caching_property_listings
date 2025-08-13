@@ -1,21 +1,24 @@
-version: '3.9'
+version: "3.9"
 
 services:
-  db:
-    image: postgres:latest
+  postgres:
+    image: postgres:16
+    restart: unless-stopped
     environment:
-      POSTGRES_DB: propertydb
-      POSTGRES_USER: propertyuser
-      POSTGRES_PASSWORD: propertypass
+      POSTGRES_DB: ${POSTGRES_DB:-alx_caching}
+      POSTGRES_USER: ${POSTGRES_USER:-alx_user}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-alx_pass}
     ports:
       - "5432:5432"
     volumes:
-      - postgres_data:/var/lib/postgresql/data
+      - pgdata:/var/lib/postgresql/data
 
   redis:
-    image: redis:latest
+    image: redis:7
+    restart: unless-stopped
     ports:
       - "6379:6379"
+    command: ["redis-server", "--appendonly", "yes"]
 
 volumes:
-  postgres_data:
+  pgdata:
