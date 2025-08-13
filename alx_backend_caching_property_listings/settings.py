@@ -61,12 +61,12 @@ else:
     DB_NAME = os.getenv('DB_NAME')
 DATABASES = {
     'default': {
-        'ENGINE': DB_ENGINE,
-        'NAME': str(DB_NAME),
-        'USER': os.getenv('DB_USER'),
+        'ENGINE': os.getenv('DB_ENGINE', 'django.db.backends.postgresql'), 
+        'NAME': os.getenv('DB_NAME', 'alx_caching'),
+        'USER': os.getenv('DB_USER', 'alx_user'),
         'PASSWORD': os.getenv('DB_PASSWORD'),
-        'HOST': os.getenv('DB_HOST', 'localhost'),
-        'PORT': os.getenv('DB_PORT', ''),
+        'HOST': os.getenv('DB_HOST', 'postgres'),
+        'PORT': os.getenv('DB_PORT', '5432'),
     }
 }
 
